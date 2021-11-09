@@ -1,0 +1,15 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    class Cell {
+        object BaseProperties {
+            var width = 10
+            var height = 10
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10704#comment
+status: Solved
+record: -1

@@ -1,0 +1,17 @@
+type: code
+custom_name: 'Board game basics: Game'
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    object PlayingField {
+        object Size {
+            var width: Int = 0
+            var height: Int = 0
+        }
+        fun changeSize(newWidth: Int, newHeight: Int) // TODO
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10702#comment
+status: Solved
+record: -1
