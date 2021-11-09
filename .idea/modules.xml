@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Smart_Calculator4.iml" filepath="$PROJECT_DIR$/.idea/modules/Smart_Calculator4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Smart Calculator/task/Smart_Calculator4.Smart_Calculator-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Smart Calculator/task/Smart_Calculator4.Smart_Calculator-task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Smart Calculator/task/Smart_Calculator4.Smart_Calculator-task.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Smart Calculator/task/Smart_Calculator4.Smart_Calculator-task.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Smart Calculator/task/Smart_Calculator4.Smart_Calculator-task.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Smart Calculator/task/Smart_Calculator4.Smart_Calculator-task.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Smart_Calculator4.util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Smart_Calculator4.util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Smart_Calculator4.util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Smart_Calculator4.util.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/Smart_Calculator4.util.test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/Smart_Calculator4.util.test.iml" />
+    </modules>
+  </component>
+</project>
