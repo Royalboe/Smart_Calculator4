@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/271268/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Wed, 17 Nov 2021 21:56:39 UTC
+update_date: Fri, 26 Nov 2021 23:05:01 UTC
 stages:
 - id: 486
   step: 7809
@@ -25,7 +25,7 @@ stages:
   is_completed: true
 - id: 492
   step: 7815
-  is_completed: false
+  is_completed: true
 - id: 493
   step: 7816
   is_completed: false
@@ -48,7 +48,7 @@ topics:
   - title: The big O notation
     theory_id: 16699
   - title: Data structures
-    theory_id: 5161
+    theory_id: 16927
   - title: Introduction to software architecture
     theory_id: 15368
   - title: Introduction to logging
