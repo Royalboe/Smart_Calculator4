@@ -1,8 +1,10 @@
 package calculator
 
+import java.math.BigInteger
+
 val stack = Stack()
 val postFixExpressions = mutableListOf<String>()
-val digitsMap = mutableMapOf<String, Int>()
+val digitsMap = mutableMapOf<String, String>()
 
 fun main() {
     while (true) {
@@ -65,7 +67,9 @@ fun String.reformatString(): List<String> {
     return input.split(" ")
 }
 
-fun String.operandToInt(): Int = if (this.isDigit()) this.toInt() else digitsMap[this] ?: 0
+fun String.operandToInt(): Int = if (this.isDigit()) this.toInt() else digitsMap[this]!!.toInt()
+
+fun String.operandToBigInt(): BigInteger = if (this.isDigit()) this.toBigInteger() else digitsMap[this]!!.toBigInteger()
 
 fun String.isDigit() = this.matches("[-+]?[0-9]+\\b".toRegex())
 
@@ -87,12 +91,12 @@ fun assign(k: String, v: String) {
             println("Unknown variable")
         }
     }
-    digitsMap[k] = if (isValueNumber) v.toInt() else digitsMap[v] ?: 0
+    digitsMap[k] = if (isValueNumber) v else digitsMap[v]!!
 
 }
 
 fun compute(list: List<String>) {
-    var result = 0
+    var result: Any = 0
     var isCalc = false
     var isAss = false
     val operands = mutableListOf<String>()
@@ -102,10 +106,26 @@ fun compute(list: List<String>) {
             val operand1 = operands[operands.lastIndex - 1]
             val operand2 = operands[operands.lastIndex]
             when (w) {
-                "+" -> result = operand1.operandToInt() + operand2.operandToInt()
-                "-" -> result = operand1.operandToInt() - operand2.operandToInt()
-                "*" -> result = operand1.operandToInt() * operand2.operandToInt()
-                "/" -> result = operand1.operandToInt() / operand2.operandToInt()
+                "+" -> result = try {
+                    operand1.operandToInt() + operand2.operandToInt()
+                } catch (e: Exception) {
+                    operand1.operandToBigInt() + operand2.operandToBigInt()
+                }
+                "-" -> result = try {
+                    operand1.operandToInt() - operand2.operandToInt()
+                } catch (e: Exception) {
+                    operand1.operandToBigInt() - operand2.operandToBigInt()
+                }
+                "*" -> result = try {
+                    operand1.operandToInt() * operand2.operandToInt()
+                } catch (e: Exception) {
+                    operand1.operandToBigInt() * operand2.operandToBigInt()
+                }
+                "/" -> result = try {
+                    operand1.operandToInt() / operand2.operandToInt()
+                } catch (e: Exception) {
+                    operand1.operandToBigInt() / operand2.operandToBigInt()
+                }
                 "=" -> {
                     isAss = true
                     assign(operand1, operand2)
@@ -119,7 +139,7 @@ fun compute(list: List<String>) {
     }
     if (!isCalc) {
         if (digitsMap.containsKey(operands.last())) {
-            result = digitsMap[operands.last()] ?: 0
+            result = digitsMap[operands.last()]!!
         } else {
             println("Unknown variable")
             return
